@@ -1,0 +1,60 @@
+# HW1 - Jon Snows Army
+#include <iostream>
+using namespace std;
+
+//HW1_315793737_Q3
+
+/*
+Legend -
+ans = Answer
+armySize = Size of the army
+i = First number
+j = Second number
+k = For testing
+alreadyPrinted = If the number was already printed
+*/
+
+int main() {
+
+	int armySize;
+	int i, j, k, alreadyPrinted;
+	int ans;
+	cout << "Please enter the size of the army \n";
+	cin >> armySize;
+
+	cout << "Soldiers that their multiple is equal to the army size and are going to war: \n";
+	for (i = 1; i < armySize; i++)
+	{
+
+		for (j = 1; j <= armySize; j++) {
+			if (i*j == armySize)
+			{
+				if (i > 1)
+				{
+					ans = 0;
+					for (k = 2; k < i; k++)
+					{
+						if (i%k == 0)
+							ans++;
+					}
+					if (ans == 0)
+					{
+						if ((i < j) || (i == j))
+						{
+							cout << i << " X " << j << endl;
+							alreadyPrinted = i;
+						}
+						else
+							if ((i > j) && (j != alreadyPrinted))
+								cout << j << " X " << i << endl;
+
+					}
+				}
+
+
+			}
+
+		}
+	}//end of if
+	system("pause>NULL");
+}//end of for
